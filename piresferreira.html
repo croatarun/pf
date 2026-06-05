@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>1º CORRE Paróquia Nossa Senhora do Perpétuo Socorro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Barlow+Condensed:ital,wght@0,700;0,900;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #D4AF37;
+            --primary-hover: #B8962E;
+            --bg: #0C0F14;
+            --surface: #161B22;
+            --surface-accent: #1C2129;
+            --text-primary: #FFFFFF;
+            --text-secondary: #8B949E;
+            --border: rgba(255, 255, 255, 0.08);
+            --container-width: 1100px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 120px 20px 80px;
+            text-align: center;
+            background: radial-gradient(circle at top, #1C2129 0%, var(--bg) 80%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2.3rem, 8vw, 4.5rem);
+            font-weight: 900;
+            font-style: italic;
+            line-height: 0.95;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span { color: var(--primary); }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Countdown */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 48px;
+        }
+
+        .cd-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 16px;
+            border-radius: 12px;
+            min-width: 85px;
+        }
+
+        .cd-item span {
+            display: block;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .cd-item label {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 18px 36px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-main {
+            background-color: var(--primary);
+            color: #000;
+        }
+
+        .btn-main:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        /* Sponsor CTA/Alert Button */
+        .btn-sponsor {
+            width: 100%;
+            max-width: 540px;
+            margin-top: 12px;
+            background: linear-gradient(90deg, rgba(212,175,55,0.05) 0%, rgba(212,175,55,0.15) 100%);
+            border: 1px dashed var(--primary);
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        .btn-sponsor:hover {
+            background: rgba(212,175,55,0.2);
+            border-style: solid;
+        }
+
+        /* Content Grid */
+        .content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 40px;
+            border-radius: 16px;
+        }
+
+        .card-full { grid-column: 1 / -1; }
+
+        .card h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.75rem;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .info-list { list-style: none; }
+
+        .info-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info-list li:last-child { border: none; }
+
+        .info-list .label { color: var(--text-secondary); font-weight: 500; }
+        .info-list .value { color: var(--text-primary); font-weight: 700; text-align: right; }
+
+        /* Highlight Card */
+        .prize-card {
+            background: linear-gradient(135deg, #1C2129 0%, #0C0F14 100%);
+            border: 1px solid var(--primary);
+            text-align: center;
+        }
+
+        .prize-title {
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .prize-amount {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        /* Sponsors */
+        .footer {
+            padding: 60px 20px;
+            background: var(--surface);
+            text-align: center;
+        }
+
+        /* WhatsApp Fab */
+        .fab {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 56px;
+            height: 56px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .fab:hover { transform: scale(1.1); }
+
+        /* Responsive */
+        @media (max-width: 850px) {
+            .grid { grid-template-columns: 1fr; }
+            .hero { padding-top: 80px; }
+            .card { padding: 32px 24px; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-badge">25 de Julho • 2026</div>
+        <h1>1º CORRE<br><span>N. Sra. do Perpétuo Socorro</span></h1>
+        <p>Una esporte e devoção em um evento imperdível pelas ruas de Pires Ferreira/CE.</p>
+
+        <div class="countdown">
+            <div class="cd-item"><span id="days">00</span><label>Dias</label></div>
+            <div class="cd-item"><span id="hours">00</span><label>Horas</label></div>
+            <div class="cd-item"><span id="minutes">00</span><label>Min</label></div>
+            <div class="cd-item"><span id="seconds">00</span><label>Seg</label></div>
+        </div>
+
+        <div class="btn-group">
+            <a href="https://forms.gle/niCLaZs4ap9k9uHc6" class="btn btn-main" target="_blank">Fazer Inscrição</a>
+            <a href="https://wa.me/558892189062?text=Envio%20do%20comprovante%20de%20inscrição%20-%201o%20CORRE" class="btn btn-secondary" target="_blank">Enviar Comprovante</a>
+            
+            <a href="https://wa.me/558892189062?text=Quero%20saber%20mais%20informações%20sobre%20o%201o%20CORRE" class="btn btn-sponsor" target="_blank">
+                ⚠️ Inscrição validada apenas após o envio do comprovante.
+            </a>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="grid">
+            <div class="card">
+                <h2>Programação</h2>
+                <ul class="info-list">
+                    <li><span class="label">Local</span><span class="value">Pires Ferreira/CE</span></li>
+                    <li><span class="label">Concentração</span><span class="value">A partir das 05h20</span></li>
+                    <li><span class="label">Largada</span><span class="value">05h40 — Pontual</span></li>
+                    <li><span class="label">Data</span><span class="value">25 de Julho de 2026</span></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Inscrição Inclui</h2>
+                <ul class="info-list">
+                    <li><span class="label">Identificação</span><span class="value">Número de Peito</span></li>
+                    <li><span class="label">Camisa</span><span class="value">Oficial do Evento</span></li>
+                    <li><span class="label">Suporte</span><span class="value">Mesa de Frutas & Hidratação</span></li>
+                    <li><span class="label">Premiação</span><span class="value">Medalha de Participação</span></li>
+                    <li><span class="label">Sorteio</span><span class="value">Cartela Rifão</span></li>
+                </ul>
+            </div>
+
+            <div class="card card-full prize-card">
+                <div class="prize-title">Investimento</div>
+                <div class="prize-amount">VALOR: R$ 60,00</div>
+                <p style="color: var(--text-secondary); margin-bottom: 12px;"><strong>Chave PIX:</strong> medvetmarcoribeiro19@gmail.com</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Bradesco: Marcos Antonio Ribeiro da Silva</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p style="font-size: 0.75rem; color: var(--text-secondary); opacity: 0.5;">&copy; 2026 Paróquia Nossa Senhora do Perpétuo Socorro. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- WhatsApp Fab -->
+    <a href="https://wa.me/5588998202785?text=Olá! Gostaria de tirar uma dúvida sobre o 1º CORRE" class="fab" target="_blank">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#FFF">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.766-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217s.231.001.332.005c.109.004.258-.041.404.311.144.354.491 1.2.535 1.288.044.088.072.19.014.306-.058.116-.087.188-.173.289l-.26.303c-.087.101-.177.211-.076.386.101.174.451.744.966 1.204.665.594 1.223.778 1.397.865.174.088.275.073.376-.044.101-.116.434-.506.549-.68.116-.174.232-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/>
+        </svg>
+    </a>
+
+    <script>
+        const eventDate = new Date("July 25, 2026 05:40:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = eventDate - now;
+
+            if (diff <= 0) return;
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = d.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = h.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = m.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = s.toString().padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
