@@ -2,20 +2,21 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>1º CORRE Paróquia Nossa Senhora do Perpétuo Socorro</title>
+    <title>1º CORRE — Paróquia Nossa Senhora do Perpétuo Socorro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Barlow+Condensed:ital,wght@0,700;0,900;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,700;0,900;1,900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #D4AF37;
-            --primary-hover: #B8962E;
-            --bg: #0C0F14;
-            --surface: #161B22;
-            --surface-accent: #1C2129;
-            --text-primary: #FFFFFF;
-            --text-secondary: #8B949E;
+            --primary: #38bdf8;
+            --primary-hover: #0ea5e9;
+            --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+            --bg: #090d16;
+            --surface: rgba(22, 27, 34, 0.7);
+            --surface-accent: #1f293d;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
             --border: rgba(255, 255, 255, 0.08);
             --container-width: 1100px;
         }
@@ -28,79 +29,93 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 0% 100%, rgba(56, 189, 248, 0.05) 0%, transparent 40%);
+            background-attachment: fixed;
         }
 
         /* Hero Section */
         .hero {
             position: relative;
-            padding: 120px 20px 80px;
+            padding: 140px 20px 80px;
             text-align: center;
-            background: radial-gradient(circle at top, #1C2129 0%, var(--bg) 80%);
             border-bottom: 1px solid var(--border);
         }
 
         .hero-badge {
             display: inline-block;
-            padding: 6px 16px;
-            background: rgba(212, 175, 55, 0.1);
+            padding: 8px 20px;
+            background: rgba(56, 189, 248, 0.1);
             color: var(--primary);
-            border: 1px solid var(--primary);
+            border: 1px solid rgba(56, 189, 248, 0.3);
             border-radius: 100px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
+            backdrop-filter: blur(4px);
         }
 
         .hero h1 {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: clamp(2.3rem, 8vw, 4.5rem);
+            font-size: clamp(2.5rem, 8vw, 5rem);
             font-weight: 900;
             font-style: italic;
             line-height: 0.95;
             text-transform: uppercase;
             margin-bottom: 24px;
+            letter-spacing: -1px;
         }
 
-        .hero h1 span { color: var(--primary); }
+        .hero h1 span {
+            background: linear-gradient(135deg, #fff 30%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
         .hero p {
             color: var(--text-secondary);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            max-width: 640px;
+            margin: 0 auto 44px;
         }
 
         /* Countdown */
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 16px;
             margin-bottom: 48px;
         }
 
         .cd-item {
             background: var(--surface);
             border: 1px solid var(--border);
-            padding: 16px;
-            border-radius: 12px;
-            min-width: 85px;
+            padding: 20px;
+            border-radius: 14px;
+            min-width: 95px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
         .cd-item span {
             display: block;
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 4px;
         }
 
         .cd-item label {
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             color: var(--text-secondary);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            font-weight: 600;
         }
 
         /* Buttons */
@@ -109,56 +124,60 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .btn {
-            padding: 18px 36px;
-            border-radius: 8px;
+            padding: 18px 38px;
+            border-radius: 10px;
             font-weight: 700;
             text-transform: uppercase;
             text-decoration: none;
             font-size: 0.9rem;
             letter-spacing: 1px;
-            transition: all 0.2s ease;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
         }
 
         .btn-main {
-            background-color: var(--primary);
-            color: #000;
+            background: var(--primary-gradient);
+            color: #042f2e;
+            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
         }
 
         .btn-main:hover {
-            background-color: var(--primary-hover);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+            filter: brightness(1.1);
         }
 
         .btn-secondary {
             background-color: transparent;
             color: var(--text-primary);
             border: 1px solid var(--border);
+            backdrop-filter: blur(4px);
         }
 
         .btn-secondary:hover {
             background-color: rgba(255,255,255,0.05);
+            border-color: var(--text-secondary);
+            transform: translateY(-2px);
         }
 
-        /* Sponsor CTA/Alert Button */
-        .btn-sponsor {
+        .btn-alert {
             width: 100%;
-            max-width: 540px;
-            margin-top: 12px;
-            background: linear-gradient(90deg, rgba(212,175,55,0.05) 0%, rgba(212,175,55,0.15) 100%);
-            border: 1px dashed var(--primary);
-            color: var(--primary);
-            font-size: 0.8rem;
-        }
-
-        .btn-sponsor:hover {
-            background: rgba(212,175,55,0.2);
-            border-style: solid;
+            max-width: 580px;
+            margin-top: 14px;
+            background: rgba(239, 68, 68, 0.06);
+            border: 1px dashed rgba(239, 68, 68, 0.4);
+            color: #fca5a5;
+            font-size: 0.85rem;
+            cursor: default;
+            pointer-events: none;
         }
 
         /* Content Grid */
@@ -171,33 +190,36 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
+            gap: 32px;
         }
 
         .card {
             background: var(--surface);
             border: 1px solid var(--border);
-            padding: 40px;
-            border-radius: 16px;
+            padding: 44px;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
         }
 
         .card-full { grid-column: 1 / -1; }
 
         .card h2 {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: 1.75rem;
+            font-size: 2rem;
             text-transform: uppercase;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
+            letter-spacing: 0.5px;
         }
 
         .card h2::after {
             content: "";
             flex: 1;
             height: 1px;
-            background: var(--border);
+            background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
         }
 
         .info-list { list-style: none; }
@@ -205,43 +227,97 @@
         .info-list li {
             display: flex;
             justify-content: space-between;
-            padding: 16px 0;
+            align-items: center;
+            padding: 18px 0;
             border-bottom: 1px solid var(--border);
         }
 
         .info-list li:last-child { border: none; }
 
         .info-list .label { color: var(--text-secondary); font-weight: 500; }
-        .info-list .value { color: var(--text-primary); font-weight: 700; text-align: right; }
+        .info-list .value { color: var(--text-primary); font-weight: 600; text-align: right; }
 
-        /* Highlight Card */
-        .prize-card {
-            background: linear-gradient(135deg, #1C2129 0%, #0C0F14 100%);
-            border: 1px solid var(--primary);
+        /* Highlight Card (PIX / Valor) */
+        .pix-card {
+            background: linear-gradient(135deg, rgba(31, 41, 61, 0.5) 0%, rgba(9, 13, 22, 0.5) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.3);
             text-align: center;
         }
 
-        .prize-title {
+        .pix-title {
             color: var(--primary);
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
-        .prize-amount {
+        .pix-amount {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-size: clamp(2.5rem, 7vw, 4rem);
             font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 16px;
+            line-height: 1;
+            margin-bottom: 24px;
+            color: #fff;
         }
 
-        /* Sponsors */
+        .pix-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .pix-key-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.03);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .pix-key {
+            font-family: monospace;
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            word-break: break-all;
+        }
+
+        .btn-copy {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-copy:hover {
+            background: var(--primary);
+            color: #000;
+        }
+
+        .pix-details {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
         .footer {
             padding: 60px 20px;
-            background: var(--surface);
+            background: rgba(11, 15, 24, 0.9);
+            border-top: 1px solid var(--border);
             text-align: center;
         }
 
@@ -250,35 +326,38 @@
             position: fixed;
             bottom: 32px;
             right: 32px;
-            width: 56px;
-            height: 56px;
+            width: 60px;
+            height: 60px;
             background-color: #25D366;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
             z-index: 100;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        .fab:hover { transform: scale(1.1); }
+        .fab:hover { transform: scale(1.1) rotate(5deg); }
 
         /* Responsive */
         @media (max-width: 850px) {
-            .grid { grid-template-columns: 1fr; }
-            .hero { padding-top: 80px; }
+            .grid { grid-template-columns: 1fr; gap: 24px; }
+            .hero { padding-top: 100px; padding-bottom: 60px; }
             .card { padding: 32px 24px; }
             .btn { width: 100%; }
+            .countdown { gap: 8px; }
+            .cd-item { min-width: 75px; padding: 14px; }
+            .cd-item span { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
     <header class="hero">
-        <div class="hero-badge">25 de Julho • 2026</div>
-        <h1>1º CORRE<br><span>N. Sra. do Perpétuo Socorro</span></h1>
-        <p>Una esporte e devoção em um evento imperdível pelas ruas de Pires Ferreira/CE.</p>
+        <div class="hero-badge">🗓️ 25 de Julho • 2026</div>
+        <h1>1º CORRE<br><span>Paróquia N. Sra. do Perpétuo Socorro</span></h1>
+        <p>Una esporte, saúde e devoção em um evento imperdível pelas ruas de Pires Ferreira/CE.</p>
 
         <div class="countdown">
             <div class="cd-item"><span id="days">00</span><label>Dias</label></div>
@@ -288,64 +367,86 @@
         </div>
 
         <div class="btn-group">
-            <a href="https://forms.gle/niCLaZs4ap9k9uHc6" class="btn btn-main" target="_blank">Fazer Inscrição</a>
-            <a href="https://wa.me/558892189062?text=Envio%20do%20comprovante%20de%20inscrição%20-%201o%20CORRE" class="btn btn-secondary" target="_blank">Enviar Comprovante</a>
-            
-            <a href="https://wa.me/558892189062?text=Quero%20saber%20mais%20informações%20sobre%20o%201o%20CORRE" class="btn btn-sponsor" target="_blank">
-                ⚠️ Inscrição validada apenas após o envio do comprovante.
+            <a href="https://forms.gle/niCLaZs4ap9k9uHc6" class="btn btn-main" target="_blank">
+                📝 Fazer Inscrição
             </a>
+            <a href="https://wa.me/5588998202785?text=Olá!%20Aqui%20está%20o%20meu%20comprovante%20de%20pagamento%20para%20o%201º%20CORRE." class="btn btn-secondary" target="_blank">
+                📲 Enviar Comprovante
+            </a>
+            
+            <div class="btn btn-alert">
+                ⚠️ Importante: A inscrição só será validada após o envio do comprovante pelo WhatsApp.
+            </div>
         </div>
     </header>
 
     <main class="content">
         <div class="grid">
+            <!-- Card 1: Programação -->
             <div class="card">
-                <h2>Programação</h2>
+                <h2>📍 Programação</h2>
                 <ul class="info-list">
-                    <li><span class="label">Local</span><span class="value">Pires Ferreira/CE</span></li>
+                    <li><span class="label">Local</span><span class="value">Pires Ferreira / CE</span></li>
                     <li><span class="label">Concentração</span><span class="value">A partir das 05h20</span></li>
-                    <li><span class="label">Largada</span><span class="value">05h40 — Pontual</span></li>
-                    <li><span class="label">Data</span><span class="value">25 de Julho de 2026</span></li>
+                    <li><span class="label">Largada</span><span class="value" style="color: #4ade80;">05h40 (Pontual)</span></li>
+                    <li><span class="label">Data</span><span class="value">Sábado, 25/07/2026</span></li>
                 </ul>
             </div>
 
+            <!-- Card 2: Kit Atleta -->
             <div class="card">
-                <h2>Inscrição Inclui</h2>
+                <h2>🎽 O que está incluso?</h2>
                 <ul class="info-list">
                     <li><span class="label">Identificação</span><span class="value">Número de Peito</span></li>
-                    <li><span class="label">Camisa</span><span class="value">Oficial do Evento</span></li>
+                    <li><span class="label">Vestuário</span><span class="value">Camisa Oficial do Evento</span></li>
                     <li><span class="label">Suporte</span><span class="value">Mesa de Frutas & Hidratação</span></li>
-                    <li><span class="label">Premiação</span><span class="value">Medalha de Participação</span></li>
-                    <li><span class="label">Sorteio</span><span class="value">Cartela Rifão</span></li>
+                    <li><span class="label">Mérito</span><span class="value" style="color: #f3fafc;">Medalha de Participação</span></li>
+                    <li><span class="label">Sorteio Extra</span><span class="value">Cartela Rifão</span></li>
                 </ul>
             </div>
 
-            <div class="card card-full prize-card">
-                <div class="prize-title">Valor</div>
-                <div class="prize-amount">R$ 60,00</div>
+            <!-- Card 3: Investimento e PIX -->
+            <div class="card card-full pix-card">
+                <div class="pix-title">Inscrição Individual</div>
+                <div class="pix-amount">R$ 60,00</div>
+                
+                <div class="pix-box">
+                    <span style="font-size: 0.9rem; font-weight: 600; color: #f8fafc;">Chave PIX Copie e Cole:</span>
+                    <div class="pix-key-container">
+                        <span class="pix-key" id="pixKey">medvetmarcoribeiro19@gmail.com</span>
+                        <button class="btn-copy" onclick="copyPix()">Copiar</button>
+                    </div>
+                    <div class="pix-details">
+                        <strong>Banco Bradesco:</strong> Marcos Antonio Ribeiro da Silva
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
     <footer class="footer">
-        <p style="font-size: 0.75rem; color: var(--text-secondary); opacity: 0.5;">&copy; 2026 Paróquia Nossa Senhora do Perpétuo Socorro. Todos os direitos reservados.</p>
+        <p style="font-size: 0.8rem; color: var(--text-secondary); opacity: 0.6;">&copy; 2026 Paróquia Nossa Senhora do Perpétuo Socorro. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- WhatsApp Fab -->
-    <a href="https://wa.me/5588998202785?text=Olá! Gostaria de tirar uma dúvida sobre o 1º CORRE" class="fab" target="_blank">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="#FFF">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5588998202785?text=Olá!%20Gostaria%20de%20tirar%20uma%20dúvida%20sobre%20o%201º%20CORRE." class="fab" target="_blank" title="Fale Conosco">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="#FFF">
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.766-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217s.231.001.332.005c.109.004.258-.041.404.311.144.354.491 1.2.535 1.288.044.088.072.19.014.306-.058.116-.087.188-.173.289l-.26.303c-.087.101-.177.211-.076.386.101.174.451.744.966 1.204.665.594 1.223.778 1.397.865.174.088.275.073.376-.044.101-.116.434-.506.549-.68.116-.174.232-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"/>
         </svg>
     </a>
 
     <script>
+        // Countdown Logic
         const eventDate = new Date("July 25, 2026 05:40:00").getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
             const diff = eventDate - now;
 
-            if (diff <= 0) return;
+            if (diff <= 0) {
+                document.querySelector(".countdown").innerHTML = "<p style='color: #4ade80; font-weight: bold; font-size: 1.2rem;'>O evento já começou ou foi realizado!</p>";
+                return;
+            }
 
             const d = Math.floor(diff / (1000 * 60 * 60 * 24));
             const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -360,6 +461,25 @@
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
+
+        // Copy PIX Function
+        function copyPix() {
+            const pixText = document.getElementById("pixKey").innerText;
+            navigator.clipboard.writeText(pixText).then(() => {
+                const copyBtn = document.querySelector(".btn-copy");
+                copyBtn.innerText = "Copiado!";
+                copyBtn.style.background = "#4ade80";
+                copyBtn.style.color = "#000";
+                
+                setTimeout(() => {
+                    copyBtn.innerText = "Copiar";
+                    copyBtn.style.background = "rgba(56, 189, 248, 0.1)";
+                    copyBtn.style.color = "var(--primary)";
+                }, 2000);
+            }).catch(err => {
+                alert("Falha ao copiar automaticamente. Copie manualmente: " + pixText);
+            });
+        }
     </script>
 </body>
 </html>
